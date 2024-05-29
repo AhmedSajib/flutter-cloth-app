@@ -1,6 +1,8 @@
+import 'package:cloth_app/widgets/bottom_sheet.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProductScreen extends StatelessWidget {
   String img;
@@ -141,7 +143,14 @@ class ProductScreen extends StatelessWidget {
                           ),
                         ),
                         InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            showModalBottomSheet(
+                                backgroundColor: Colors.transparent,
+                                context: context,
+                                builder: (context) {
+                                  return CustomBottomSheet();
+                                });
+                          },
                           child: Container(
                               padding: EdgeInsets.symmetric(
                                   vertical: 20, horizontal: 70),
@@ -152,8 +161,10 @@ class ProductScreen extends StatelessWidget {
                               child: Text(
                                 'Buy Now',
                                 style: TextStyle(
-                                  color: Color(0xFFF7F8FA),
-                                  fontSize: 15,
+                                  color: Colors.white.withOpacity(0.9),
+                                  fontSize: 17.sp,
+                                  fontWeight: FontWeight.w600,
+                                  letterSpacing: 1,
                                 ),
                               )),
                         ),

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../widgets/product_card_widget.dart';
 
@@ -25,12 +26,12 @@ class HomePage extends StatelessWidget {
       body: SingleChildScrollView(
         child: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.only(top: 20, left: 15),
+            padding: const EdgeInsets.only(top: 20, left: 15).r,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(right: 25),
+                  padding: const EdgeInsets.only(right: 25).w,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -41,12 +42,12 @@ class HomePage extends StatelessWidget {
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: TextFormField(
-                          decoration: const InputDecoration(
+                          decoration: InputDecoration(
                             label: Text("Find your product"),
                             border: InputBorder.none,
                             prefixIcon: Icon(
                               Icons.search,
-                              size: 30,
+                              size: 30.sp,
                               color: Colors.grey,
                             ),
                           ),
